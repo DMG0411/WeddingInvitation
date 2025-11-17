@@ -1,18 +1,17 @@
-$dark-green: #365857;
+$dark-green: #105405;
 $gap-sm: 8px;
 
 :host {
   display: block;
+  animation: fadeInUp 2s ease-out;
 }
 
-/* container general */
 .invitation {
   min-height: 100vh;
   padding: 0;     
-  font-weight: 600;       // fără spațiu sus/jos
+  font-weight: 600;
 }
 
-/* cartonașul */
 .invitation-inner {
   width: 100%;
   max-width: 480px;
@@ -20,21 +19,18 @@ $gap-sm: 8px;
   text-align: center;
   margin: 0 auto;
 
-  /* important: face cardul să țină până jos */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
 
-/* borduri */
 .border img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* bordura de jos stă lipită de fund, dar se mută mai jos dacă textul e lung */
 .border.bottom-border {
   margin-top: auto;
 }
@@ -74,7 +70,6 @@ img.small-img {
   margin-top: 12px;
 }
 
-/* fonturi */
 .updock-font { font-family: "Updock", cursive; font-weight: 600; font-style: normal; }
 .carattere-font { font-family: "Carattere", cursive; font-weight: 600; font-style: normal; }
 .fleur-de-leah-font { font-family: "Fleur De Leah", cursive; font-weight: 600; font-style: normal; }
@@ -85,11 +80,21 @@ img.small-img {
   font-weight: bold;
 }
 
-/* ---------- MOBILE ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .invitation-inner {
     max-width: 430px;
-    padding: 0;          // să nu apară spații extra
+    padding: 0;
   }
 
   .top-centered-text {
@@ -105,7 +110,7 @@ img.small-img {
   }
 
   .flex-with-gap {
-    flex-direction: row;  // dacă vrei să rămână pe rând; poți pune "column" dacă vrei mai aerisit
+    flex-direction: row;
     text-align: center;
   }
 
@@ -116,7 +121,6 @@ img.small-img {
   }
 }
 
-/* ---------- DESKTOP ---------- */
 @media (min-width: 1024px) {
   .invitation-inner {
     max-width: 700px;

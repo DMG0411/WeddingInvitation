@@ -16,6 +16,6 @@ export class EnvelopeLandingComponent {
 
     setTimeout(() => {
       this.opened.emit();
-    }, 1200);
+    }, 4000);
   }
 }
