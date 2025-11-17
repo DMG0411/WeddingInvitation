@@ -9,10 +9,12 @@ export class EnvelopeLandingComponent {
   isOpened = false;
 
   @Output() opened = new EventEmitter<void>();
+  @Output() clicked = new EventEmitter<void>();
 
   openEnvelope() {
     if (this.isOpened) return;
     this.isOpened = true;
+    this.clicked.emit();
 
     setTimeout(() => {
       this.opened.emit();
