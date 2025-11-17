@@ -78,8 +78,11 @@ img.small-img {
 .carattere-font { font-family: "Carattere", cursive; font-weight: 400; font-style: normal; }
 .fleur-de-leah-font { font-family: "Fleur De Leah", cursive; font-weight: 400; font-style: normal; }
 
-.dark-green { color: $dark-green; }
+.dark-green { color: $dark-green; font-weight: bold; }
 .name { font-size: 20px; }
+.bold {
+  font-weight: bold;
+}
 
 /* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
