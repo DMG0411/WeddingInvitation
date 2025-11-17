@@ -1,70 +1,9 @@
-<div class="landing" [class.opened]="isOpened">
+@if(!showInvitation){
+<app-envelope-landing
+  (opened)="onEnvelopeOpened()"
+></app-envelope-landing>
+}
 
-  <div class="layer layer-closed"  (click)="openEnvelope()">
-    <img src="envelope-closed.svg" alt="Plic închis" />
-  </div>
-
-  <div class="layer layer-half">
-    <img src="envelope-half-open.png" alt="Plic pe jumătate deschis" />
-  </div>
-
-  <div class="layer landing-content">
-    <div class="top-border">
-      <img src="top-border.png">
-    </div>
-    <div class="main-content">
-    </div>
-    <div class="top-centered-text updock-font dark-green">Ne căsătorim!
-      <br>
-      04 Iulie 2026
-    </div>
-    <div class="flex-with-gap">
-      <div class="left-name-container">
-        <div class="updock-font dark-green name">Mirabela</div>
-        <div class="carattere-font">După ce-am făcut scandal, <br> M-a cerut într-un final!</div>
-      </div>
-      <img class="small-img" src="verighete-crop.png">
-      <div class="right-name-container">
-        <div class="updock-font dark-green name">Sorin</div>
-        <div class="carattere-font">De gura ei n-am scăpat, <br> Și-am cerut-o ce să fac?!</div>
-      </div>
-    </div>
-    <div class="flex-with-gap">
-      <img class="small-img" src="sampanie-crop.png">
-      <div class="flex-with-column">
-      <span class="carattere-font">Nașii oameni speciali, <br> Vor fi părinți spirituali!</span>
-      <span class="updock-font dark-green">Laura & Mihai</span>
-      </div>
-      <img class="small-img" src="arcada-crop.png">
-    </div>
-    <div class="flex-with-gap">
-      <div class="flex-with-column">
-        <span class="carattere-font">Iar părinții cei iubiți, <br> Vor fi tare fericiți!</span>
-        <span class="updock-font dark-green">Vasilica & Neculai</span>
-        <span class="updock-font dark-green">Veronica & Costel</span>
-      </div>
-      <img class="small-img" src="dansator-crop.png">
-      <div class="flex-with-column">
-        <span class="updock-font dark-green">Biserica "Sf. Ioan Botezătorul" <br> ora 17:00</span>
-        <span class="updock-font dark-green">Restaurant "La Nașu" <br> ora 20:00</span>
-      </div>
-    </div>
-    <span class="carattere-font" style="margin-top: 8px;">
-      Să nu va simțiți obligați... Nici să veniți, nici să dansați! <br>
-      Vrem să veniți din plăcere... Nu să ne dați o avere! <br>
-      Vrem să va distrați cu noi... S-avem amintiri cu voi.
-    </span>
-    <span class="fleur-de-leah-font" style="margin-top: 12px;">Va rugăm să ne confirmați prezența până la data 15.06.2026</span>
-    <div class="flex-with-gap">
-      <span class="fleur-de-leah-font">Mirabela: <br> 0785 439 889</span>
-      <div class="flex-with-column">
-        <span class="fleur-de-leah-font">la telefon:</span>
-        <img class="small-img" src="miri-crop.png">
-      </div>
-      <span class="fleur-de-leah-font">Sorin:<br> 0786 181 532</span>
-    </div>
-    <div class="bottom-border">
-      <img src="bottom-border.png">
-    </div>
-  </div>
-</div>
+@if(showInvitation){
+<app-invitation></app-invitation>
+}

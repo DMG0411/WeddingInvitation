@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { EnvelopeLandingComponent } from './envelope-landing';
+import { InvitationComponent } from './invitation';
 
 @Component({
+  imports:[EnvelopeLandingComponent, InvitationComponent],
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  isOpened = false;
+  showInvitation = false;
 
-  openEnvelope():void {
-    if (this.isOpened) return;
-    this.isOpened = true;
+  onEnvelopeOpened() {
+    this.showInvitation = true;
   }
 }

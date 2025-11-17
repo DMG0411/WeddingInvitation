@@ -1,0 +1,91 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.envelope-landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: pointer;
+
+  &.opened {
+    cursor: default;
+
+    .layer-closed {
+      animation: closed-out 0.35s ease forwards;
+    }
+
+    .layer-half {
+      animation:
+        half-in 0.25s ease forwards 0.35s,
+        half-out 0.35s ease forwards 0.65s;
+    }
+  }
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.layer-closed {
+  opacity: 1;
+}
+
+.layer-half {
+  opacity: 0;
+}
+
+@keyframes closed-out {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.04) translateY(-2%);
+  }
+}
+
+@keyframes half-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.03) translateY(6%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes half-out {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.97) translateY(-4%);
+  }
+}
+
+@media (max-width: 768px) {
+  .layer img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
