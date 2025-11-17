@@ -14,13 +14,13 @@
     cursor: default;
 
     .layer-closed {
-      animation: closed-out 5s ease forwards;
+      animation: closed-out 7s ease forwards;
     }
 
     .layer-half {
       animation:
-        half-in 5s ease forwards 2s,
-        half-out 5s ease forwards 2s;
+        half-in 7s ease forwards 4s,
+        half-out 7s ease forwards 4s;
     }
   }
 }
