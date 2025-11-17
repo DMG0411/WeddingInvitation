@@ -1,11 +1,14 @@
 $dark-green: #618170;
 $gap-sm: 8px;
 
+/* ---------- BAZĂ ---------- */
+
 :host {
   display: block;
 }
 
-.invitation {
+/* container general al paginii de invitație */
+.invitation-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -13,31 +16,35 @@ $gap-sm: 8px;
   box-sizing: border-box;
 }
 
-.invitation-inner {
+/* cartonașul efectiv */
+.invitation-card {
   width: 100%;
-  max-width: 480px;
+  max-width: 700px;      /* desktop */
   background: #ffffff;
   text-align: center;
   margin: 0 auto;
 }
 
+/* bordurile cu flori */
 .border img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+/* titlu sus */
 .top-centered-text {
-  font-size: 24px;
-  margin: 12px 0 16px;
+  margin: 16px 0;
+  font-size: 28px;
 }
 
+/* blocurile cu poezii + iconițe */
 .flex-with-gap {
   display: flex;
-  gap: $gap-sm;
-  margin-top: $gap-sm;
-  align-items: center;
-  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .flex-with-column {
@@ -47,39 +54,60 @@ $gap-sm: 8px;
   gap: 4px;
 }
 
+/* imagini mici (verighete, șampanie etc.) */
 img.small-img {
-  width: 50px;
+  width: 56px;
   height: auto;
 }
 
-.stanza {
-  display: block;
-  margin-top: 12px;
-}
-
+/* strofe & confirmări */
+.stanza,
 .confirm {
   display: block;
   margin-top: 12px;
 }
 
-.updock-font { font-family: "Updock", cursive; font-weight: 400; font-style: normal; }
-.carattere-font { font-family: "Carattere", cursive; font-weight: 400; font-style: normal; }
-.fleur-de-leah-font { font-family: "Fleur De Leah", cursive; font-weight: 400; font-style: normal; }
+/* fonturi & culori – păstrăm ce aveai */
+.updock-font {
+  font-family: "Updock", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
-.dark-green { color: $dark-green; }
-.name { font-size: 20px; }
+.carattere-font {
+  font-family: "Carattere", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fleur-de-leah-font {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dark-green {
+  color: #618170;
+}
+
+.name {
+  font-size: 22px;
+}
+
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 768px) {
-  .invitation {
+  .invitation-page {
     padding: 12px 6px;
   }
 
-  .invitation-inner {
-    max-width: 430px;
+  .invitation-card {
+    max-width: 100%;      /* folosește toată lățimea ecranului */
   }
 
   .top-centered-text {
-    font-size: 20px;
+    font-size: 22px;
+    margin: 12px 0;
   }
 
   .name {
@@ -87,11 +115,12 @@ img.small-img {
   }
 
   img.small-img {
-    width: 38px;
+    width: 40px;
   }
 
   .flex-with-gap {
-    flex-direction: column;
+    flex-direction: column;   /* 👈 foarte important */
+    align-items: center;
     text-align: center;
   }
 
@@ -102,13 +131,15 @@ img.small-img {
   }
 }
 
+/* ---------- DESKTOP MAI LAT ---------- */
+
 @media (min-width: 1024px) {
-  .invitation-inner {
-    max-width: 700px;
+  .invitation-card {
+    max-width: 780px;
   }
 
   .top-centered-text {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .carattere-font,
@@ -117,6 +148,6 @@ img.small-img {
   }
 
   img.small-img {
-    width: 60px;
+    width: 64px;
   }
 }
