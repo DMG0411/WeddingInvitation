@@ -1,19 +1,18 @@
 :host {
   display: block;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-// --- Variables ---
 $dark-green: #618170;
 $gap-sm: 8px;
 $small-img-size: 50px;
 
-// --- Layout ---
 .landing {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   cursor: pointer;
+  overflow-x: hidden;
 
   &.opened {
     cursor: default;
@@ -23,11 +22,13 @@ $small-img-size: 50px;
     }
 
     .layer-half {
-      animation: half-in 0.45s ease forwards 0.45s, half-out 0.45s ease forwards 0.8s;
+      animation:
+        half-in 0.45s ease forwards 0.45s,
+        half-out 0.45s ease forwards 0.8s;
     }
 
     .landing-content {
-      animation: content-in 0.7s ease forwards 1.9s;
+      animation: content-in 0.7s ease forwards 1.0s;
       pointer-events: auto;
     }
   }
@@ -53,24 +54,52 @@ $small-img-size: 50px;
 .landing-content { opacity: 0; pointer-events: none; }
 
 .landing-content {
+  position: relative;
+  inset: auto;
   display: flex !important;
   flex-direction: column;
   text-align: center;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
 }
 
-// --- Borders & simple helpers ---
-.top-centered-text { width: 100%; text-align: center; font-size: 24px; }
+.top-centered-text {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  margin: 12px 0;
+}
 
 .top-border,
-.bottom-border { position: relative; }
+.bottom-border {
+  position: relative;
+}
 
-.flex-with-gap { display: flex; gap: $gap-sm; margin-top: $gap-sm; }
+.top-border img,
+.bottom-border img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-.flex-with-column { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.flex-with-gap {
+  display: flex;
+  gap: $gap-sm;
+  margin-top: $gap-sm;
+}
 
-img.small-img { width: $small-img-size !important; height: auto; }
+.flex-with-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
 
-// --- Typography (preserve original class names) ---
+img.small-img {
+  width: $small-img-size !important;
+  height: auto;
+}
+
 .updock-font { font-family: "Updock", cursive; font-weight: 400; font-style: normal; }
 .carattere-font { font-family: "Carattere", cursive; font-weight: 400; font-style: normal; }
 .fleur-de-leah-font { font-family: "Fleur De Leah", cursive; font-weight: 400; font-style: normal; }
@@ -78,7 +107,6 @@ img.small-img { width: $small-img-size !important; height: auto; }
 .dark-green { color: $dark-green; }
 .name { font-size: 20px; }
 
-// --- Animations ---
 @keyframes closed-out {
   0% { opacity: 1; transform: scale(1) translateY(0); }
  100% { opacity: 0; transform: scale(1.03) translateY(-3%); }
@@ -99,7 +127,33 @@ img.small-img { width: $small-img-size !important; height: auto; }
  100% { opacity: 1; transform: translateY(0); }
 }
 
-// --- Responsive ---
 @media (max-width: 768px) {
-  .layer img { width: 100%; height: auto; max-height: 100%; object-fit: contain; }
+  .landing-content {
+    padding: 1.2rem 1rem 1.5rem;
+  }
+
+  .top-centered-text {
+    font-size: 20px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  img.small-img {
+    width: 36px !important;
+  }
+
+  .flex-with-gap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .carattere-font,
+  .fleur-de-leah-font {
+    font-size: 14px;
+    line-height: 1.3;
+  }
 }
+
