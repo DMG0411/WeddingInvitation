@@ -43,6 +43,7 @@
 }
 
 .landing.opened {
+  cursor:default;
   .layer-closed {
     animation: closed-out 0.45s ease forwards;
   }
@@ -57,6 +58,67 @@
     animation: content-in 0.7s ease forwards 1.9s;
     pointer-events: auto;
   }
+}
+
+.top-centered-text {
+  width:100%;
+  text-align: center;
+  font-size: 24px;
+}
+
+.top-border{
+  top:0;
+  position: fixed;;
+}
+
+.bottom-border{
+  bottom:0;
+  position: fixed;
+}
+
+.flex-with-gap{
+  display: flex;
+  gap: 8px;;
+  margin-top:8px;
+}
+
+
+img.small-img{
+  width: 50px !important;
+  height: auto;
+}
+
+.updock-font{
+  font-family: "Updock", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.carattere-font{
+  font-family: "Carattere", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fleur-de-leah-font {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dark-green{
+    color: #618170;
+}
+
+.name{
+  font-size:20px;
+}
+
+.flex-with-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:4px;
 }
 
 @keyframes closed-out {
