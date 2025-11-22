@@ -6,6 +6,15 @@ $gap-sm: 8px;
   animation: fadeInUp 2s ease-out;
 }
 
+.doves {
+  position: fixed;
+  left:20%;
+  width: 300px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
 .invitation {
   min-height: 100vh;
   padding: 0;     
