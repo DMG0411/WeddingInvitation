@@ -7,11 +7,12 @@ $gap-sm: 8px;
 }
 
 .doves {
-  position: fixed;
+  position: absolute;
   left:20%;
   width: 300px;
+  object-fit: cover; 
   pointer-events: none;
-  z-index: 9999;
+  z-index: 1;
 }
 
 
@@ -32,6 +33,14 @@ $gap-sm: 8px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+
+  position: relative;
+  overflow: hidden;  
+}
+
+.invitation-inner > *:not(.doves) {
+  position: relative;
+  z-index: 2;
 }
 
 .border img {
